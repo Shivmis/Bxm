@@ -35,8 +35,7 @@ async def start_pm(client, message: Message, _):
                baby = await message.reply_text("[□□□□□□□□□□] 0%")
 
         # Simulate progress bar updates
-        progress = ["[■□□□□□□□□□] 10%", "[■■□□□□□□□□] 20%", "[■■■□□□□□□□] 30%", "[■■■■□□□□□□] 40%", "[■■■■■□□□□□] 50%", 
-                    "[■■■■■■□□□□] 60%", "[■■■■■■■□□□] 70%", "[■■■■■■■■□□] 80%", "[■■■■■■■■■□] 90%", "[■■■■■■■■■■] 100%"]
+        progress = ["[■□□□□□□□□□] 10%", "[■■■■■■■■■■] 100%"]
         for i, step in enumerate(progress):
             await baby.edit_text(f"**{step} ↺{10 * (i+1)}%**")
             await asyncio.sleep(0.005)  # Adjust speed of progress here
