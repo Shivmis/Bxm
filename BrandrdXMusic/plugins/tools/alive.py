@@ -15,7 +15,7 @@ async def start(client: Client, message: Message):
             [
                [
             InlineKeyboardButton(
-                text="☆ ʙʀᴀɴᴅᴇᴅ 💗 ", url=f"https://t.me/Shivang_mishra_op"
+                text="☆ - ♔ 𝐒 𝐇 𝐈 𝐕 𝐀 𝐍 𝐆 🜲 ˹ 𝐎ᴘ ˼﹛🇨🇦﹜≈ 💸 💗 ", url=f"https://t.me/Shivang_mishra_op"
             ),
             InlineKeyboardButton(
                 text="☆ ꜱᴜᴘᴘᴏʀᴛ 💗", url=f"https://t.me/shivang_xd"
@@ -23,7 +23,7 @@ async def start(client: Client, message: Message):
         ],
                 [
             InlineKeyboardButton(
-                text="☆ ᴄʜᴀɴɴᴇʟ💗", url=f"https://t.me/shivang_mishra_xd"
+                text="☆ ᴄʜᴀɴɴᴇʟ💗", url=f"https://t.me/fedxnetwork"
             ),
                 ],
                 [
