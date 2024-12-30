@@ -32,19 +32,8 @@ async def start_pm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
-               baby = await message.reply_text("[□□□□□□□□□□] 0%")
-
-        # Simulate progress bar updates
-        progress = ["[■□□□□□□□□□] 10%"]
-        for i, step in enumerate(progress):
-            await baby.edit_text(f"**{step} ↺{10 * (i+1)}%**")
-            await asyncio.sleep(0.005)  # Adjust speed of progress here
-
-        # After progress bar reaches 100%, send final message and delete it
-        await baby.edit_text("**❖ Jᴀʏ sʜʀᴇᴇ ʀᴀᴍ  🚩...**")
-        await asyncio.sleep(1)  # Wait for 2 seconds before deletion
-        await baby.delete()
-
+               keyboard = help_pannel(_)
+            await message.reply_sticker("CAACAgQAAxkBAAEQ245ljYcpjiUzNlnqZayXwYGXQdQUYgAC2Q8AAnsbSFJTlxo-p_AUAAEzBA")
         if name[0:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
