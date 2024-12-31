@@ -42,8 +42,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/shivang_xd")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/X_NETWORK_BOTS_I")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/X_NETWORK_BOTS_I")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/shivang_xd")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -89,13 +89,13 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/73265ccd9c313cbae23e0-95d0c686b373b81d02.jpg"
+    "START_IMG_URL", "https://te.legra.ph/file/62c76ac2095332a0ede75.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://te.legra.ph/file/923c1faac33d8c70335dc.jpg"
+    "PING_IMG_URL", "https://te.legra.ph/file/4f59fb748e1990acfa297.jpg"
 )
-PLAYLIST_IMG_URL = "https://te.legra.ph/file/923c1faac33d8c70335dc.jpg"
-STATS_IMG_URL = "https://graph.org/file/73265ccd9c313cbae23e0-95d0c686b373b81d02.jpg"
+PLAYLIST_IMG_URL = "https://te.legra.ph/file/14eb59ea7d31229d8d751.jpg"
+STATS_IMG_URL = "https://te.legra.ph/file/4310ea5f523520b2b765b.jpg"
 TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/923c1faac33d8c70335dc.jpg"
 TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/6c66f8b192532fe758e82.jpg"
 STREAM_IMG_URL = "https://te.legra.ph/file/ebc4dc6357be06e08a3ed.jpg"
@@ -124,4 +124,4 @@ if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
+)
