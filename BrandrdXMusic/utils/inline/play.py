@@ -52,7 +52,23 @@ def stream_markup_timer(_, vidid, chat_id, played, dur):
         bar = "————————❥—"
     else:
         bar = "—————————❥"
-    buttons = [
+   def get_timer_selection():
+    selections = [
+        "▁▄▂▇▄▅▄▅▃",
+        "▁▃▇▂▅▇▄▅▃",
+        "▃▁▇▂▅▃▄▃▅",
+        "▃▄▂▄▇▅▃▅▁",
+        "▁▃▄▂▇▃▄▅▃",
+        "▃▁▄▂▅▃▇▃▅",
+        "▁▇▄▂▅▄▅▃▄",
+        "▁▃▅▇▂▅▄▃▇",
+        "▃▅▂▅▇▁▄▃▁",
+        "▇▅▂▅▃▄▃▁▃",
+        "▃▇▂▅▁▅▄▃▁",
+        "▅▄▇▂▅▂▄▇▁",
+        "▃▅▂▅▃▇▄▅▃",
+    ]
+    return selections buttons 
          [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
