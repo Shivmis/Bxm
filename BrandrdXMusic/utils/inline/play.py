@@ -53,7 +53,22 @@ def stream_markup_timer(_, vidid, chat_id, played, dur):
     else:
         bar = "—————————❥"
     
-         [
+def get_timer_selection():
+    selections = [
+        "▁▄▂▇▄▅▄▅▃",
+        "▁▃▇▂▅▇▄▅▃",
+        "▃▁▇▂▅▃▄▃▅",
+        "▃▄▂▄▇▅▃▅▁",
+        "▁▃▄▂▇▃▄▅▃",
+        "▃▁▄▂▅▃▇▃▅",
+        "▁▇▄▂▅▄▅▃▄",
+        "▁▃▅▇▂▅▄▃▇",
+        "▃▅▂▅▇▁▄▃▁",
+        "▇▅▂▅▃▄▃▁▃",
+        "▃▇▂▅▁▅▄▃▁",
+        "▅▄▇▂▅▂▄▇▁",
+        "▃▅▂▅▃▇▄▅▃",
+
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
@@ -74,22 +89,84 @@ def stream_markup_timer(_, vidid, chat_id, played, dur):
             InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+if 0 < umm <= 10:
+        return "▰▱▱▱▱▱▱▱▱"
+    elif 10 < umm <= 20:
+        return "▰▰▱▱▱▱▱▱▱"
+    elif 20 < umm <= 30:
+        return "▰▰▰▱▱▱▱▱▱"
+    elif 30 < umm <= 40:
+        return "▰▰▰▰▱▱▱▱▱"
+    elif 40 < umm <= 50:
+        return "▰▰▰▰▰▱▱▱▱"
+    elif 50 < umm <= 60:
+        return "▰▰▰▰▰▰▱▱▱"
+    elif 60 < umm <= 70:
+        return "▰▰▰▰▰▰▰▱▱"
+    elif 70 < umm <= 80:
+        return "▰▰▰▰▰▰▰▰▱"
+    elif 80 < umm <= 90:
+        return "▰▰▰▰▰▰▰▰▰"
+    elif 90 < umm <= 100:
+        return "▰▰▰▰▰▰▰▰▰▰"
+    else:
+        return "▱▱▱▱▱▱▱▱▱"
+
+def get_timer_selection():
+    selections = [
+        "▁▄▂▇▄▅▄▅▃",
+        "▁▃▇▂▅▇▄▅▃",
+        "▃▁▇▂▅▃▄▃▅",
+        "▃▄▂▄▇▅▃▅▁",
+        "▁▃▄▂▇▃▄▅▃",
+        "▃▁▄▂▅▃▇▃▅",
+        "▁▇▄▂▅▄▅▃▄",
+        "▁▃▅▇▂▅▄▃▇",
+        "▃▅▂▅▇▁▄▃▁",
+        "▇▅▂▅▃▄▃▁▃",
+        "▃▇▂▅▁▅▄▃▁",
+        "▅▄▇▂▅▂▄▇▁",
+        "▃▅▂▅▃▇▄▅▃",
     ]
-    return buttons
+    return selections
 
+def stream_markup_timer(_, videoid, chat_id, played, dur):
+    played_sec = time_to_seconds(played)
+    duration_sec = time_to_seconds(dur)
+    percentage = (played_sec / duration_sec) * 100
 
-def stream_markup(_, videoid, chat_id):
+    bar = get_progress_bar(percentage)  # using for getting the bar
+    timer_selection = get_timer_selection()  # new timer selection
+
     buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["P_B_7"], callback_data=f"add_playlist {videoid}"
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=timer_selection[played_sec % len(timer_selection)],
+                callback_data="GetTimerAnimation",
+            ),
+        ],
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ], 
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        ],
+        [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close")],
     ]
     return buttons
 
