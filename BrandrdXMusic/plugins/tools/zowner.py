@@ -34,7 +34,7 @@ async def clones(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "ƨσʋяcɛ", url=f"https://files.catbox.moe/64yhbc.mp4"
+                        "ƨσʋяcɛ", url=f"https://files.catbox.moe/8xcwu0.mp4"
                     )
                 ]
             ]
